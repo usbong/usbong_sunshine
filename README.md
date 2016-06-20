@@ -1,2 +1,16 @@
 # usbong_sunshine
-scaffold; the same as usbong_sunshine_alpha, except includes modifications for in-app billing, i.e. all_languages, instead of all_local_languages and all_foreign_languages; does not include actual content (i.e .utree file)
++scaffold; <br>
++the same as usbong_sunshine_alpha, except includes modifications for in-app billing, i.e. all_languages, instead of all_local_languages and all_foreign_languages; <br>
++does not include actual content (i.e .utree file)
+
+# Official Company Website
+http://www.usbong.ph
+
+# Open Source Software License
+Copyright 2016 Usbong Social Systems, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+  
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
