@@ -3,19 +3,15 @@
 	style="@style/UsbongEditTextFieldParentLayout"
 	android:id="@+id/parent_layout_id"       	
 	>
-	<ScrollView style="@style/UsbongDefaultScrollView"
-	>		 	
-		<LinearLayout style="@style/UsbongDefaultMainLayout">
-			<TextView android:id="@+id/textfield_textview"
-			    style="@style/UsbongDefaultTextView"	    	
-			    android:text="@string/default_textview" 
-		    	/>
-			    
-			<EditText android:id="@+id/textfield_edittext"
-				style="@style/UsbongDefaultEditText"	
-			/>
-		</LinearLayout>
-	</ScrollView>	    	    	
+	
+		<TextView android:id="@+id/textfield_textview"
+		    style="@style/UsbongDefaultTextView"	    	
+		    android:text="@string/default_textview" 
+	    	/>
+		    
+		<EditText android:id="@+id/textfield_edittext"
+			style="@style/UsbongDefaultEditText"	
+		/>
 	<LinearLayout
 		style="@style/UsbongDefaultBackNextButtonLayout">	
 	    <Button android:id="@+id/back_button"

@@ -881,7 +881,7 @@ public class UsbongScreenProcessor
 			//Reference: http://www.anddev.org/tinytut_-_get_resources_by_name__getidentifier_-t460.html; last accessed 14 Sept 2011
 //			        Resources myRes = getResources();
 			    myDrawableImage = myRes.getDrawable(myRes.getIdentifier("no_image", "drawable", UsbongUtils.myPackageName));
-			    myImageTextDisplayImageView.setImageDrawable(myDrawableImage);		        		        	
+			    myImageTextDisplayImageView.setImageDrawable(myDrawableImage);
 			}
 		} else if (udtea.currScreen == UsbongConstants.GPS_LOCATION_SCREEN) {
 			udtea.setContentView(R.layout.gps_location_screen);

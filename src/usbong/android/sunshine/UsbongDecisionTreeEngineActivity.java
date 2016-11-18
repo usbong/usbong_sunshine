@@ -36,7 +36,10 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import usbong.android.features.node.PaintActivity;
 import usbong.android.features.node.QRCodeReaderActivity;
+import usbong.android.sunshine.UsbongDecisionTreeEngineActivity;
+import usbong.android.sunshine.UsbongMainActivity;
 import usbong.android.multimedia.audio.AudioRecorder;
+import usbong.android.utils.AppRater;
 import usbong.android.utils.FedorMyLocation;
 import usbong.android.utils.PurchaseLanguageBundleListAdapter;
 import usbong.android.utils.UsbongConstants;
@@ -242,7 +245,7 @@ public class UsbongDecisionTreeEngineActivity extends AppCompatActivity implemen
         super.onCreate(savedInstanceState);        
                 
         instance=this;
-        
+                
         //added by Mike, 20160511
         if (UsbongUtils.hasUnlockedAllLanguages) {
         	UsbongUtils.hasUnlockedLocalLanguages=true;
@@ -412,6 +415,7 @@ public class UsbongDecisionTreeEngineActivity extends AppCompatActivity implemen
 			protected Boolean doInBackground(String... params) {
 			    try {
 			    	UsbongUtils.initInAppBillingService(getInstance());
+			    	UsbongUtils.initInAppBillingService(getInstance()); //need to call this twice to get the updated languageBundleList
 			    }
 			    catch (Exception e) {
 			    	e.printStackTrace();
@@ -2273,12 +2277,21 @@ public class UsbongDecisionTreeEngineActivity extends AppCompatActivity implemen
 
     		//added by Mike, 20160415
     		if (UsbongUtils.IS_IN_AUTO_LOOP_MODE) {
+    			//added by Mike, 20161118
+		        AppRater.showRateDialog(this); 
+
     			isAutoLoopedTree=true;
     			initParser(myTree);
     			return;
     		}
-    		else {
+    		else {    	
+    			//return to main activity
     			finish();
+    			//added by Mike, 20161118
+    			Intent toUsbongMainActivityIntent = new Intent(UsbongDecisionTreeEngineActivity.this, UsbongMainActivity.class);
+    			toUsbongMainActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+    			toUsbongMainActivityIntent.putExtra("completed_tree","true");
+    			startActivity(toUsbongMainActivityIntent);
     		}
     	}
     	else {			
